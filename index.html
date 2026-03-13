@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Your Ultimate Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>FitTrack Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active" onclick="showSection('dashboard')">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tracker" class="nav-link" onclick="showSection('tracker')">Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#workouts" class="nav-link" onclick="showSection('workouts')">Workouts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#nutrition" class="nav-link" onclick="showSection('nutrition')">Nutrition</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#progress" class="nav-link" onclick="showSection('progress')">Progress</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link" onclick="showSection('settings')">Settings</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard -->
+        <section id="dashboard" class="section active">
+            <div class="dashboard-grid">
+                <div class="stat-card steps">
+                    <i class="fas fa-shoe-prints"></i>
+                    <div>
+                        <h3 id="steps-count">0</h3>
+                        <p>Steps Today</p>
+                    </div>
+                </div>
+                <div class="stat-card calories">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <h3 id="calories-count">0</h3>
+                        <p>Calories Burned</p>
+                    </div>
+                </div>
+                <div class="stat-card distance">
+                    <i class="fas fa-route"></i>
+                    <div>
+                        <h3 id="distance-count">0</h3>
+                        <p>Distance (km)</p>
+                    </div>
+                </div>
+                <div class="stat-card water">
+                    <i class="fas fa-tint"></i>
+                    <div>
+                        <h3 id="water-count">0</h3>
+                        <p>Water (ml)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-charts">
+                <canvas id="weeklyChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Tracker -->
+        <section id="tracker" class="section">
+            <div class="tracker-container">
+                <div class="tracker-inputs">
+                    <div class="input-group">
+                        <label>Steps</label>
+                        <input type="number" id="steps-input" placeholder="Enter steps">
+                        <button onclick="addSteps()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="input-group">
+                        <label>Calories</label>
+                        <input type="number" id="calories-input" placeholder="Enter calories">
+                        <button onclick="addCalories()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="input-group">
+                        <label>Distance (km)</label>
+                        <input type="number" id="distance-input" step="0.1" placeholder="Enter distance">
+                        <button onclick="addDistance()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="input-group">
+                        <label>Water (ml)</label>
+                        <input type="number" id="water-input" placeholder="Enter water">
+                        <button onclick="addWater()"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="startWorkout()">Start Workout</button>
+                    <button class="quick-btn" onclick="logMeal()">Log Meal</button>
+                    <button class="quick-btn" onclick="resetToday()">Reset Today</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workouts -->
+        <section id="workouts" class="section">
+            <div class="workouts
